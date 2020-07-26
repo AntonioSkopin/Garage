@@ -4,14 +4,14 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/autos_index.css" />
+    
 </head>
 <body>
 
     <h1>Alle Auto's</h1>
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
+    <br />
+    <a class="bg-primary" asp-action="Create">Voeg een nieuwe auto toe</a>
+    <br /><br />
     <table class="table">
         <thead>
             <tr>
@@ -47,9 +47,9 @@
                         @Html.DisplayFor(modelItem => item.EigenaarNaam)
                     </td>
                     <td>
-                        <a asp-action="Edit" class="bg-warning" asp-route-id="@item.AutoId">Edit</a> |
+                        <a asp-action="Edit" class="bg-warning" asp-route-id="@item.AutoId">Bewerk</a> |
                         <a asp-action="Details" class="bg-info" asp-route-id="@item.AutoId">Details</a> |
-                        <a asp-action="Delete" class="bg-danger" asp-route-id="@item.AutoId">Delete</a>
+                        <a asp-action="Delete" class="bg-danger" asp-route-id="@item.AutoId">Verwijder</a>
                     </td>
                 </tr>
             }
