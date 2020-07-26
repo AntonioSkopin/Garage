@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Garage.Models.Auto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/autos_index.css" />
+</head>
+<body>
+
+    <h1>Alle Auto's</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AutoKenteken)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AutoMerk)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AutoType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EigenaarNaam)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AutoKenteken)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AutoMerk)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AutoType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EigenaarNaam)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" class="bg-warning" asp-route-id="@item.AutoId">Edit</a> |
+                        <a asp-action="Details" class="bg-info" asp-route-id="@item.AutoId">Details</a> |
+                        <a asp-action="Delete" class="bg-danger" asp-route-id="@item.AutoId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

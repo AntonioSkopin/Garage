@@ -1,0 +1,49 @@
+﻿@model Garage.Models.Auto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Auto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AutoId" />
+            <div class="form-group">
+                <label asp-for="AutoKenteken" class="control-label"></label>
+                <input asp-for="AutoKenteken" class="form-control" />
+                <span asp-validation-for="AutoKenteken" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AutoMerk" class="control-label"></label>
+                <input asp-for="AutoMerk" class="form-control" />
+                <span asp-validation-for="AutoMerk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AutoType" class="control-label"></label>
+                <input asp-for="AutoType" class="form-control" />
+                <span asp-validation-for="AutoType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EigenaarNaam" class="control-label"></label>
+                <input asp-for="EigenaarNaam" class="form-control" />
+                <span asp-validation-for="EigenaarNaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
