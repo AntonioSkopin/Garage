@@ -4,55 +4,59 @@
 }
 
 <head>
-    
+    <link rel="stylesheet" href="~/css/autoIndex.css" />
 </head>
 <body>
-
     <h1>Alle Auto's</h1>
     <br />
     <a class="bg-primary" asp-action="Create">Voeg een nieuwe auto toe</a>
     <br /><br />
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.AutoKenteken)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AutoMerk)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AutoType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EigenaarNaam)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="table-container">
+        <table id="autos">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AutoKenteken)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AutoMerk)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AutoType)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EigenaarNaam)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" class="bg-warning" asp-route-id="@item.AutoId">Bewerk</a> |
-                        <a asp-action="Details" class="bg-info" asp-route-id="@item.AutoId">Details</a> |
-                        <a asp-action="Delete" class="bg-danger" asp-route-id="@item.AutoId">Verwijder</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AutoKenteken)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AutoMerk)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AutoType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EigenaarNaam)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AutoKenteken)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AutoMerk)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AutoType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EigenaarNaam)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" class="bg-warning"
+                            asp-route-id="@item.AutoId">Bewerk</a> |
+                            <a asp-action="Details" class="bg-info"
+                            asp-route-id="@item.AutoId">Details</a> |
+                            <a asp-action="Delete" class="bg-danger"
+                            asp-route-id="@item.AutoId">Verwijder</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </body>
