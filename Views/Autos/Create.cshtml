@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 <head>
-    <link rel="stylesheet" href="~/css/createAuto.css"/>
+    <link rel="stylesheet" href="~/css/createauto.css"/>
 </head>
 <body>
     <h1>Voeg een auto toe</h1>
@@ -12,18 +12,18 @@
     <form asp-action="Create" autocomplete="off">
         <div asp-validation-summary="ModelOnly"></div>
         <label asp-for="AutoKenteken"></label><br />
-        <input asp-for="AutoKenteken" />
-        <span asp-validation-for="AutoKenteken"></span><br />
+        <input class="inputbox" asp-for="AutoKenteken" />
+        <span asp-validation-for="AutoKenteken"></span><br /><br />
         <label asp-for="AutoMerk"></label><br />
-        <input asp-for="AutoMerk" />
-        <span asp-validation-for="AutoMerk"></span><br />
+        <input class="inputbox" asp-for="AutoMerk" />
+        <span asp-validation-for="AutoMerk"></span><br /><br />
         <label asp-for="AutoType"></label><br />
-        <input asp-for="AutoType" />
-        <span asp-validation-for="AutoType"></span><br />
+        <input class="inputbox" asp-for="AutoType" />
+        <span asp-validation-for="AutoType"></span><br /><br />
         <label asp-for="EigenaarNaam"></label><br />
-        <input asp-for="EigenaarNaam" />
-        <span asp-validation-for="EigenaarNaam"></span><br />
-        <input type="submit" value="Submit" />
+        <input class="inputbox" asp-for="EigenaarNaam" />
+        <span asp-validation-for="EigenaarNaam"></span><br /><br />
+        <input class="submitbttn" type="submit" value="Submit" />
     </form>
 
 <div>

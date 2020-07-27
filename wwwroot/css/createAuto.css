@@ -1,1 +1,30 @@
-﻿
+﻿input {
+    width: 20vw;
+}
+
+.inputbox {
+    padding: 0.5rem;
+    border: 1px solid #bababa;
+    border-radius: 5px;
+}
+
+.inputbox:focus {
+    outline-color: #3b6d8e;
+}
+
+.submitbttn {
+    color: #fff;
+    background-color: #3b6d8e;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.submitbttn:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
