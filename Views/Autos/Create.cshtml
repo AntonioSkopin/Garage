@@ -3,39 +3,28 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
+    <link rel="stylesheet" href="~/css/createAuto.css"/>
+</head>
+<body>
+    <h1>Voeg een auto toe</h1>
 
-<h1>Create</h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" autocomplete="off">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AutoKenteken" class="control-label"></label>
-                <input asp-for="AutoKenteken" class="form-control" />
-                <span asp-validation-for="AutoKenteken" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AutoMerk" class="control-label"></label>
-                <input asp-for="AutoMerk" class="form-control" />
-                <span asp-validation-for="AutoMerk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AutoType" class="control-label"></label>
-                <input asp-for="AutoType" class="form-control" />
-                <span asp-validation-for="AutoType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EigenaarNaam" class="control-label"></label>
-                <input asp-for="EigenaarNaam" class="form-control" />
-                <span asp-validation-for="EigenaarNaam" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    <form asp-action="Create" autocomplete="off">
+        <div asp-validation-summary="ModelOnly"></div>
+        <label asp-for="AutoKenteken"></label><br />
+        <input asp-for="AutoKenteken" />
+        <span asp-validation-for="AutoKenteken"></span><br />
+        <label asp-for="AutoMerk"></label><br />
+        <input asp-for="AutoMerk" />
+        <span asp-validation-for="AutoMerk"></span><br />
+        <label asp-for="AutoType"></label><br />
+        <input asp-for="AutoType" />
+        <span asp-validation-for="AutoType"></span><br />
+        <label asp-for="EigenaarNaam"></label><br />
+        <input asp-for="EigenaarNaam" />
+        <span asp-validation-for="EigenaarNaam"></span><br />
+        <input type="submit" value="Submit" />
+    </form>
 
 <div>
     <a asp-action="Index">Back to List</a>
@@ -44,3 +33,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+</body>
